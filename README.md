@@ -34,25 +34,13 @@ python carga_datos.py [cantidad] // Tal vez python3, según su instalación
 
 ## Parte 1: MongoDB
 
-Moverse a la rama `docker/parte-1`:
-```bash
-git checkout docker/parte-1
-```
+## Parte 2: PostgreSQL
 
 Completar el archivo `webserver/src/database.py` para que:
 
 1. Se conecte a la base de datos.
 2. Se haga la carga de un tweet.
 3. Se pueda consultar por un tweet por `id`.
-4. Utilizar la rama `docker/parte-1-pydantic` para verificar cómo se construye en capa de negocio una solución a la verificación del esquema de datos.
-
-## Parte 2: PostgreSQL
-
-Ir a la rama `docker/parte-2` con:
-
-```bash
-git checkout docker/parte-2
-```
 
 ## Parte 3: PostgreSQL con ORM
 
