@@ -8,10 +8,10 @@ La ejecución es posible para dos tipos de instalaciones: con `docker` (y `docke
 
 ## Entorno de desarrollo con `docker`
 
-Moverse a la rama `docker` del repositorio:
+Moverse a la rama `docker/init` del repositorio:
 
 ```bash
-git checkout docker
+git checkout docker/init
 ```
 
 ## Parte 1: MongoDB
