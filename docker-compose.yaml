@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:4.4-focal
+    container_name: taller-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/mongo:/data/db
+    networks:
+      - taller-network
+
+  postgres:
+    image: postgres:14
+    container_name: taller-postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/postgres:/var/lib/postgresql/data
+    networks:
+      - taller-network
+
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taller-webserver
+    ports:
+      - 8000:8000
+    volumes:
+      - ./webserver/src:/app/src
+      - ./dbt:/app/dbt
+    depends_on:
+      - mongodb
+      - postgres
+    networks:
+      - taller-network
+
+networks:
+  taller-network:
+    name: taller-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.125.0/24
+

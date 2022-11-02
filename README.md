@@ -4,39 +4,68 @@
 
 En el taller se tratará con dos bases de datos: MongoDB y postgresql.
 
-Se dividirá el proyecto en etapas, de las cuales el estudiante puede elegir hacerlas o no según haya instalado los requerimientos. Se puede utilizar `docker` y `docker-compose` para contar con todos los requerimientos a la vez.
+La ejecución es posible para dos tipos de instalaciones: con `docker` (y `docker-compose`) o de forma local, contando necesariamente con `python` y `postgresql` instalados.
 
-### Utilizando `docker`
+## Entorno de desarrollo con `docker`
 
-1) Instalar `docker` y `docker-compose` en su sistema operativo.
-    - [Linux](https://docs.docker.com/engine/install/)
-    - [Windows](https://docs.docker.com/docker-for-windows/install/):
-    - [Mac](https://docs.docker.com/docker-for-mac/install/)
-2) Configurar correctamente los volumenes de `docker` para que pueda acceder a los archivos desde su sistema operativo en el archivo `docker-compose.yaml`.
-3) Ejecutar `docker-compose up -d` para iniciar los contenedores.
+Teniendo `docker` y `docker-compose` instalados en su sistema operativo ejecutar:
 
-## Parte 1: Webserver y MongoDB
-
-Editar el archivo `src/mongodb/load_tweet.py` con su IDE para completar la operación requerida.
-
-## Parte 2: Webserver y Postgresql
-
-Verificar que existen 3 archivos en `src/psql`:
-- `init.py`
-- `load_tweet.py`
-- `orm.py`
-
-Editar el archivo `src/psql/load_tweet.py` con su IDE para completar la operación requerida.
-Luego, editar el archivo `src/psql/orm.py` para completar la misma operación pero utilizando la interfaz tipo ORM de `sqlalchemy`.
-
-## Parte 3: Transformación de datos con `dbt`
-
-1. Explorar el directorio `/dbt` para ver los archivos de configuración y los modelos.
-2. Entrar en la instancia de `dbt` con:
+1. Bases de datos:
     ```bash
-    docker exec -it webserver bash
+    docker-compose up -d mongodb postgresql
     ```
-3. Ejecutar `dbt run` para ejecutar los modelos.
-4. Ejecutar `dbt test` para ejecutar las pruebas.
-5. Ejecutar `dbt docs generate` para generar la documentación.
-6. Ejecutar `dbt docs serve` para visualizar la documentación en el navegador.
+2. Servidor de la API:
+    ```bash
+    docker-compose up --build webserver
+    ```
+    En este punto, debería ver logs de instalación y ejecución en su terminal.
+3. Conexión al container del webserver con la instalación de python.
+    ```bash
+    docker-compose exec -it webserver bash
+    ```
+4. Una vez aquí, se podrán ejecutar comandos con la instalación de python. 
+
+### Ejecución de carga de datos
+
+Para testear su api, puede utilizar:
+```bash
+python carga_datos.py [cantidad] // Tal vez python3, según su instalación
+```
+
+## Parte 1: MongoDB
+
+Completar el archivo `webserver/src/database.py` para que:
+
+1. Se conecte a la base de datos.
+2. Se haga la carga de un tweet.
+3. Se pueda consultar por un tweet por `id`.
+4. Utilizar la rama `docker/parte-1-pydantic` para verificar cómo se construye en capa de negocio una solución a la verificación del esquema de datos.
+
+## Parte 2: PostgreSQL
+
+Ir a la rama `docker/parte-2` con:
+
+```bash
+git checkout docker/parte-2
+```
+
+Completar el archivo `webserver/src/database.py` para que:
+
+1. Se conecte a la base de datos.
+2. Se haga la carga de un tweet.
+3. Se pueda consultar por un tweet por `id`.
+
+## Parte 3: PostgreSQL con ORM
+
+Ir a la rama `docker/parte-3` con:
+
+```bash
+git checkout docker/parte-3
+```
+
+Completar el archivo `webserver/src/database.py` para que:
+
+1. Crear el esquema de `tweets` con sus respectivas columnas.
+    1. Se cree la conexión y se ejecute la sentencia para crear la tabla correspondiente.
+2. Se haga la carga de un tweet.
+3. Se pueda consultar por un tweet por `id`.
