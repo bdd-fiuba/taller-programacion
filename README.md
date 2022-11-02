@@ -36,12 +36,6 @@ python carga_datos.py [cantidad] // Tal vez python3, según su instalación
 
 ## Parte 2: PostgreSQL
 
-Completar el archivo `webserver/src/database.py` para que:
-
-1. Se conecte a la base de datos.
-2. Se haga la carga de un tweet.
-3. Se pueda consultar por un tweet por `id`.
-
 ## Parte 3: PostgreSQL con ORM
 
 Ir a la rama `docker/parte-3` con:
@@ -49,3 +43,10 @@ Ir a la rama `docker/parte-3` con:
 ```bash
 git checkout docker/parte-3
 ```
+
+Completar el archivo `webserver/src/database.py` para que:
+
+1. Crear el esquema de `tweets` con sus respectivas columnas.
+    1. Se cree la conexión y se ejecute la sentencia para crear la tabla correspondiente.
+2. Se haga la carga de un tweet.
+3. Se pueda consultar por un tweet por `id`.

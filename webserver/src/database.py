@@ -2,79 +2,43 @@
 Archivo con funciones a completar de conexión
 a la base de datos
 """
-from json import dumps as json_dumps
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import Connection
 from typing import Optional
+from sqlalchemy import (
+    create_engine,
+    Column,
+    String,
+    Integer,
+    Boolean,
+    Date,
+    JSON,
+    BigInteger,
+    ARRAY,
+)
+from sqlalchemy.engine import Engine
+from sqlalchemy.orm import Session
+from sqlalchemy.ext.declarative import declarative_base
 
-DBConn = Connection
+
+DBConn = Engine
 POSTGRES_URL = "postgresql+psycopg2://admin:admin@postgres:5432/admin"
 
-
-JSON_FIELDS = [
-    "coordinates",
-    "entities",
-    "geo",
-    "place",
-    "retweeted_status",
-    "user",
-]
-STR_FIELDS = [
-    "_id",
-    "contributors",
-    "full_text",
-    "in_reply_to_screen_name",
-    "in_reply_to_status_id_str",
-    "in_reply_to_user_id_str",
-    "lang",
-    "source",
-    "text",
-    "user_id",
-]
-DATE_FIELDS = ["created_at"]
-BOOOLEAN_FIELDS = [
-    "cooccurrence_checked",
-    "hashtag_origin_checked",
-    "in_user_hashtag_collection",
-    "is_quote_status",
-    "truncated",
-]
-INT_FIELDS = [
-    "favorite_count",
-    "retweet_count",
-    "in_reply_to_status_id",
-    "in_reply_to_user_id",
-]
-INT_ARRAY_FIELDS = ["display_text_range"]
+Base = declarative_base()
 
 
-def fix_string_fields(tweet: dict):
-    for field in STR_FIELDS + DATE_FIELDS:
-        value = tweet[field]
-        if value is not None:
-            value = str(value).replace("\'", "\'\'")
-            tweet[field] = f"'{value}'"
-
-def fix_json_fields(tweet: dict):
-    for field in JSON_FIELDS:
-        value = tweet[field]
-        if value is not None:
-            value = json_dumps(value).replace("'", "''")
-            tweet[field] = f"'{value}'"
-
-
-def fix_int_array_fields(tweet: dict):
-    for field in INT_ARRAY_FIELDS:
-        value = tweet[field]
-        if value is not None:
-            value = str(value).replace("[", "{").replace("]", "}")
-            tweet[field] = f"'{value}'"
+# https://docs.sqlalchemy.org/en/20/orm/quickstart.html#declare-models
+class SqlTweet(Base):
+    __tablename__ = "tweets"
+    id = Column(String(20), primary_key=True)
 
 
 def init_db() -> DBConn:
-    pass
+    engine = create_engine(POSTGRES_URL)
+    # https://docs.sqlalchemy.org/en/20/orm/quickstart.html#emit-create-table-ddl
 
 async def load_tweet(tweet: dict, conn: DBConn):
+    # https://docs.sqlalchemy.org/en/20/orm/session_basics.html
+    tweet['id'] = tweet['_id']
+    del tweet['_id']
     raise NotImplementedError()
 
 
