@@ -3,8 +3,12 @@ Archivo con funciones a completar de conexión
 a la base de datos
 """
 from typing import Optional
+from pymongo import MongoClient
+from pymongo.collection import Collection
 
-DBConn = None
+DBConn = Collection
+MONGO_URL = "mongodb://admin:admin@mongodb:27017"
+MONGO_DBNAME = "taller"
 
 
 def init_db() -> DBConn:
