@@ -1,7 +1,7 @@
 from datetime import datetime
 from json import load as json_load
 from pathlib import Path
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Any
 
 
@@ -14,7 +14,7 @@ def _get_example():
 
 
 class Tweet(BaseModel):
-    id: Any
+    id: Any = Field(alias='_id')
     contributors: Any
     cooccurrence_checked: Any
     coordinates: Any
