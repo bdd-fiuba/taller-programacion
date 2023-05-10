@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "webserver"
+version = "0.1.0"
+description = "Webserver de carga de datos para el Taller de Programación con Bases de Datos"
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.7.2,<4.0"
+pymongo = "^4.3.2"
+SQLAlchemy = "^1.4.42"
+fastapi = "^0.85.1"
+uvicorn = "^0.19.0"
+dbt-postgres = "^1.3.0"
+cryptography = "^38.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
