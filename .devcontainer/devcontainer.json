@@ -2,8 +2,8 @@
   "name": "Taller VI: Programación con Bases de Datos",
 
   "dockerComposeFile": "../docker-compose.yaml",
-  "service": "webserver",
-  "workspaceFolder": "/app",
+  "service": "client",
+  "workspaceFolder": "/taller",
 
   "customizations": {
     "vscode": {

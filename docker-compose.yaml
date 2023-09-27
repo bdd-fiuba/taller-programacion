@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mongodb:
-    image: mongo:4.4-focal
+    image: mongo
     container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
@@ -10,37 +10,46 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./data/container_mongodb:/data/db
-    networks:
-      - taller-network
-
-  postgres:
-    image: postgres:14
-    container_name: postgres
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-    ports:
-      - 5439:5439
-    volumes:
-      - ./data/container_postgresql:/var/lib/postgresql/data
+      - ./data/db/mongodb:/data/db
     networks:
       - taller-network
 
   webserver:
     build:
-      context: .
+      context: ./webserver
       dockerfile: Dockerfile
     container_name: webserver
     ports:
-      - 9000:9000
+      - 9505:9000
     volumes:
       - ./webserver:/app/webserver:rw
     depends_on:
       - mongodb
-      - postgres
     networks:
       - taller-network
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - 7515:5432
+    volumes:
+      - ./data/db/:/var/lib/postgresql/data
+    networks:
+      - taller-network
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: client
+    depends_on:
+      - webserver
+      - postgres
 
 networks:
   taller-network:

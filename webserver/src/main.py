@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Response
 from json import dumps as json_dumps
 
-from webserver.database import init_db, load_tweet, get_tweet
-from webserver.tweet import Tweet, tweet_to_dict
-from webserver.response_tweet import ResponseTweet
+from webserver.src.database import init_db, load_tweet, get_tweet
+from webserver.src.tweet import Tweet, tweet_to_dict
+from webserver.src.response_tweet import ResponseTweet
 
 
 app = FastAPI(

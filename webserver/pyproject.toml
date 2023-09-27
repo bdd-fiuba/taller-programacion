@@ -1,19 +1,16 @@
 [tool.poetry]
-name = "db"
+name = "webserver"
 version = "0.1.0"
-description = "Cliente para realizar extracción y guardado de datos"
+description = "Webserver para simulación de extracción de datos"
 authors = []
 readme = "README.md"
-packages = [{ include = "client" }]
-
-[tool.poetry.scripts]
-db = "scripts.main:main"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-click = "^8.1.7"
-dbt-postgres = "^1.6.3"
-sqlalchemy = "^2.0.21"
+pymongo = "^4.5.0"
+fastapi = "^0.103.1"
+uvicorn = "^0.23.2"
+cryptography = "^41.0.4"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
