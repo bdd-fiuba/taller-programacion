@@ -1,0 +1,3 @@
+{ "_id": "AB 123 CD", "brand": "Toyota", "model": "Camry", "year": 2020, "owner": { "id": "12345678", "name": "John Doe" }, "amenities": ["Bluetooth", "Leather Seats", "Backup Camera"]}
+{ "_id": "XY 789 ZA", "brand": "Honda", "model": "Civic", "year": 2019, "owner": { "id": "87654321", "name": "Jane Smith" }, "amenities": ["Sunroof", "Navigation", "Keyless Entry"]}
+{ "_id": "BC 456 DE", "brand": "Ford", "model": "F-150", "year": 2022, "owner": { "id": "54321098", "name": "Mike Johnson" }, "amenities": ["4WD", "Towing Package", "Touchscreen Infotainment"]}

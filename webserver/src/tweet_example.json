@@ -1,0 +1,179 @@
+{
+  "id": "1143972495328010240",
+  "contributors": null,
+  "cooccurrence_checked": true,
+  "coordinates": null,
+  "created_at": "2019-06-26T20:01:11Z",
+  "display_text_range": [
+    0,
+    98
+  ],
+  "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "user_mentions": [
+      {
+        "screen_name": "ditulliojuli",
+        "name": "Juliana di Tullio",
+        "id": 4449919888,
+        "id_str": "4449919888",
+        "indices": [
+          3,
+          16
+        ]
+      },
+      {
+        "screen_name": "Leonardo_Grosso",
+        "name": "Leonardo Grosso",
+        "id": 335969426,
+        "id_str": "335969426",
+        "indices": [
+          18,
+          34
+        ]
+      },
+      {
+        "screen_name": "mariuvidal",
+        "name": "Mar\u00eda Eugenia Vidal",
+        "id": 109040582,
+        "id_str": "109040582",
+        "indices": [
+          35,
+          46
+        ]
+      }
+    ],
+    "urls": []
+  },
+  "favorite_count": 0,
+  "full_text": "RT @ditulliojuli: @Leonardo_Grosso @mariuvidal Fueron a la educaci\u00f3n c\u00edvica pero se sacaron un uno",
+  "geo": null,
+  "hashtag_origin_checked": true,
+  "in_reply_to_screen_name": null,
+  "in_reply_to_status_id": null,
+  "in_reply_to_status_id_str": null,
+  "in_reply_to_user_id": null,
+  "in_reply_to_user_id_str": null,
+  "in_user_hashtag_collection": true,
+  "is_quote_status": false,
+  "lang": "es",
+  "place": null,
+  "retweet_count": 9,
+  "retweeted_status": {
+    "created_at": "Wed Jun 26 12:47:38 +0000 2019",
+    "id": 1143863388218507269,
+    "id_str": "1143863388218507269",
+    "full_text": "@Leonardo_Grosso @mariuvidal Fueron a la educaci\u00f3n c\u00edvica pero se sacaron un uno",
+    "truncated": false,
+    "display_text_range": [
+      29,
+      80
+    ],
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "Leonardo_Grosso",
+          "name": "Leonardo Grosso",
+          "id": 335969426,
+          "id_str": "335969426",
+          "indices": [
+            0,
+            16
+          ]
+        },
+        {
+          "screen_name": "mariuvidal",
+          "name": "Mar\u00eda Eugenia Vidal",
+          "id": 109040582,
+          "id_str": "109040582",
+          "indices": [
+            17,
+            28
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "in_reply_to_status_id": 1143662957072658437,
+    "in_reply_to_status_id_str": "1143662957072658437",
+    "in_reply_to_user_id": 335969426,
+    "in_reply_to_user_id_str": "335969426",
+    "in_reply_to_screen_name": "Leonardo_Grosso",
+    "user": {
+      "id_str": "4449919888",
+      "name": "Juliana di Tullio",
+      "screen_name": "ditulliojuli",
+      "location": "",
+      "description": "Diputada Nacional del Frente para la Victoria por la Provincia de Buenos Aires (2005/2017). Mandato militante eterno. Feminista nacida y criada.",
+      "url": "https://t.co/Kv5YB1sspa",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/Kv5YB1sspa",
+              "expanded_url": "https://www.facebook.com/ditullioj",
+              "display_url": "facebook.com/ditullioj",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 104930,
+      "friends_count": 1112,
+      "listed_count": 258,
+      "created_at": "Fri Dec 11 15:48:35 +0000 2015",
+      "favourites_count": 13786,
+      "time_zone": null,
+      "verified": true,
+      "statuses_count": 11483,
+      "lang": null,
+      "profile_background_color": "F5F8FA",
+      "profile_image_url": "http://pbs.twimg.com/profile_images/676519234244124674/k4uUtH8V_normal.jpg",
+      "default_profile": true,
+      "default_profile_image": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 9,
+    "favorite_count": 63,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+  "text": "RT @ditulliojuli: @Leonardo_Grosso @mariuvidal Fueron a la educaci\u00f3n c\u00edvica pero se sacaron un uno",
+  "truncated": false,
+  "user": {
+    "id_str": "869553308721184769",
+    "name": "Avelino Garcia",
+    "screen_name": "avelinoracing",
+    "location": "",
+    "description": "",
+    "url": null,
+    "protected": false,
+    "followers_count": 55,
+    "friends_count": 79,
+    "listed_count": 0,
+    "created_at": "Tue May 30 13:57:19 +0000 2017",
+    "favourites_count": 10187,
+    "time_zone": null,
+    "verified": false,
+    "statuses_count": 12096,
+    "lang": null,
+    "default_profile": true
+  },
+  "user_id": "869553308721184769"
+}

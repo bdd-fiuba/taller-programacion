@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "db"
+version = "0.1.0"
+description = "Cliente para realizar extracción y guardado de datos"
+authors = []
+readme = "README.md"
+packages = [{ include = "client" }]
+
+[tool.poetry.scripts]
+extract = "client.main:main"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+click = "^8.1.7"
+dbt-postgres = "^1.6.3"
+SQLAlchemy = "^1.4.42"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
