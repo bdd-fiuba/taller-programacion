@@ -10,4 +10,4 @@ ENV PATH="${PATH}:/root/.local/bin"
 COPY . .
 RUN poetry install
 
-ENTRYPOINT [ "tail" "-f", "/dev/null" ]
+ENTRYPOINT [ "tail", "-f", "/dev/null" ]
